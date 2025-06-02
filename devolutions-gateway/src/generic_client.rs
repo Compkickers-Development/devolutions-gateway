@@ -77,6 +77,7 @@ where
         if conf.debug.dump_tokens {
             debug!(token, "**DEBUG OPTION**");
         }
+        info!(pdu = ?pdu, "Received preconnection blob");
 
         let source_ip = client_addr.ip();
         let claims = extract_association_claims(token, source_ip, &conf, &token_cache, &jrl, &active_recordings)?;
